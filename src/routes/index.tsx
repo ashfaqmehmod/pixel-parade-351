@@ -382,12 +382,12 @@ function Contact() {
               {F({ name: "phone", label: "Phone", type: "tel" })}
               <div className="sm:col-span-2">
                 <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-primary">Services needed</label>
-                <select id="service" name="service" defaultValue="" className={field} aria-invalid={!!errors.service}>
+                <select id="service" name="service" defaultValue="" className={field} aria-invalid={!!errors["service"]}>
                   <option value="" disabled>Select a service</option>
                   {serviceOptions.map((s) => <option key={s}>{s}</option>)}
                   <option>Multiple / Not sure yet</option>
                 </select>
-                {errors.service && <p className="mt-1 text-xs text-destructive">{errors.service}</p>}
+                {errors["service"] && <p className="mt-1 text-xs text-destructive">{errors["service"]}</p>}
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-primary">Message</label>
