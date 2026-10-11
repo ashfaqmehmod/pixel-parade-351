@@ -376,10 +376,10 @@ function Contact() {
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
-              <F name="name" label="Your name" />
-              <F name="practice" label="Practice name" />
-              <F name="email" label="Email" type="email" />
-              <F name="phone" label="Phone" type="tel" />
+              {F({ name: "name", label: "Your name" })}
+              {F({ name: "practice", label: "Practice name" })}
+              {F({ name: "email", label: "Email", type: "email" })}
+              {F({ name: "phone", label: "Phone", type: "tel" })}
               <div className="sm:col-span-2">
                 <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-primary">Services needed</label>
                 <select id="service" name="service" defaultValue="" className={field} aria-invalid={!!errors.service}>

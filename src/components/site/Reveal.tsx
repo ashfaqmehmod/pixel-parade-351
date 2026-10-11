@@ -37,7 +37,7 @@ export function Logo({ className = "" }: { className?: string }) {
 export function SectionHead({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
     <Reveal className="mx-auto mb-14 max-w-2xl text-center">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">{eyebrow}</p>
       <h2 className="text-4xl font-semibold text-primary md:text-5xl">{title}</h2>
       {text && <p className="mt-4 text-lg text-muted-foreground">{text}</p>}
     </Reveal>
