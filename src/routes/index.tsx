@@ -20,6 +20,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://billarena.lovable.app/" }],
   }),
   component: Index,
 });
@@ -40,7 +41,6 @@ function Index() {
         <HowItWorks />
         <Tools />
         <Team />
-        <Testimonials />
         <Faq />
         <Contact />
       </main>
@@ -328,7 +328,8 @@ const schema = z.object({
 function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     const r = schema.safeParse(data);
@@ -339,8 +340,21 @@ function Contact() {
       return;
     }
     setErrors({});
-    setSent(true);
-    toast.success("Thanks! We'll be in touch within one business day.");
+    setSending(true);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${brand.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...r.data, _subject: `New consultation request — ${r.data.practice}`, _replyto: r.data.email, _template: "table" }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setSent(true);
+      toast.success("Thanks! We'll be in touch within one business day.");
+    } catch {
+      toast.error(`Sorry, your message couldn't be sent. Please email ${brand.email} directly.`);
+    } finally {
+      setSending(false);
+    }
   };
   const field = "w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/30";
   const F = ({ name, label, type = "text" }: { name: string; label: string; type?: string }) => (
@@ -361,8 +375,8 @@ function Contact() {
           <p className="mt-4 text-lg text-primary-foreground/85">Book a free consultation and we'll map out exactly how a Bill Arena VA can lighten your load.</p>
           <ul className="mt-8 space-y-4">
             <li className="flex items-center gap-3"><Mail className="h-5 w-5" /><a href={`mailto:${brand.email}`} className="hover:underline">{brand.email}</a></li>
-            <li className="flex items-center gap-3"><Phone className="h-5 w-5" />{brand.phone}</li>
-            <li className="flex items-center gap-3"><MessageCircle className="h-5 w-5" />WhatsApp: {brand.whatsapp}</li>
+            <li className="flex items-center gap-3"><Phone className="h-5 w-5" /><a href={`tel:${brand.phoneIntl}`} className="hover:underline">{brand.phone}</a></li>
+            <li className="flex items-center gap-3"><MessageCircle className="h-5 w-5" /><a href={`https://wa.me/${brand.phoneIntl.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp: {brand.phone}</a></li>
           </ul>
           <p className="mt-8 flex items-center gap-2 text-sm text-primary-foreground/80"><ShieldCheck className="h-4 w-4" />We never share patient information.</p>
         </div>
@@ -393,7 +407,7 @@ function Contact() {
                 <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-primary">Message</label>
                 <textarea id="message" name="message" rows={4} className={field} />
               </div>
-              <button type="submit" className={`${btnPrimary} sm:col-span-2`}>Book My Free Consultation</button>
+              <button type="submit" disabled={sending} className={`${btnPrimary} sm:col-span-2 disabled:opacity-60`}>{sending ? "Sending…" : "Book My Free Consultation"}</button>
             </form>
           )}
         </div>
@@ -410,11 +424,6 @@ function Footer() {
         <ul className="flex flex-wrap gap-6 text-sm text-primary-foreground/80">
           {nav.map((n) => <li key={n.href}><a href={n.href} className="hover:text-primary-foreground">{n.label}</a></li>)}
         </ul>
-        <div className="flex gap-3">
-          {[{ I: Facebook, l: "Facebook" }, { I: Linkedin, l: "LinkedIn" }, { I: Instagram, l: "Instagram" }].map(({ I, l }) => (
-            <a key={l} href="#" aria-label={l} className="grid h-10 w-10 place-items-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20"><I className="h-4 w-4" /></a>
-          ))}
-        </div>
       </div>
       <div className="border-t border-primary-foreground/10 px-5 py-5 text-center text-xs text-primary-foreground/70">
         © {new Date().getFullYear()} Bill Arena · Website by Ashfaq Mehmood
