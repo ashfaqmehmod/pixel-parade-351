@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, Quote, Facebook, Linkedin, Instagram, CheckCircle2 } from "lucide-react";
+import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Logo, SectionHead } from "@/components/site/Reveal";
-import { brand, nav, stats, serviceGroups, benefits, steps, toolGroups, team, testimonials, faqs, serviceOptions } from "@/data/site";
+import { brand, nav, stats, serviceGroups, benefits, steps, toolGroups, team, faqs, serviceOptions } from "@/data/site";
 import heroImg from "@/assets/hero-leaves.jpg";
 import vaImg from "@/assets/va-work.jpg";
 import forestImg from "@/assets/forest-bg.jpg";
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://billarena.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://pixel-parade-351.lovable.app/" }],
   }),
   component: Index,
 });
@@ -271,30 +271,6 @@ function Team() {
             </article>
           </Reveal>
         ))}
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  return (
-    <section className="bg-sand/50 py-24">
-      <div className="mx-auto max-w-7xl px-5">
-        <SectionHead eyebrow="Kind words" title="What practices are saying" text="Placeholder testimonials — to be replaced with real client quotes." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={i} delay={i * 100}>
-              <figure className="h-full rounded-[1.75rem] bg-card p-7 shadow-soft">
-                <Quote className="h-8 w-8 text-accent" aria-hidden />
-                <blockquote className="mt-4 font-display text-lg text-primary">"{t.quote}"</blockquote>
-                <figcaption className="mt-6 text-sm">
-                  <span className="font-semibold text-primary">{t.name}</span>
-                  <span className="block text-muted-foreground">{t.role} · <em>Placeholder</em></span>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

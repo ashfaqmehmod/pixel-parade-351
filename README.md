@@ -1,24 +1,20 @@
-# Pixel Parade
+# Bill Arena — Website
 
-Implement exactly the screenshot and nothing else
+Marketing website for **Bill Arena**, a team of remote medical virtual assistants supporting US healthcare practices with front office work, insurance verification, prior authorizations and billing / revenue cycle.
 
-This project was built with [Lovable](https://lovable.dev).
+## Features
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/cb3c39a8-7e61-4f4d-9eee-978f5349b4b1).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- Single-page site: services, benefits, process, tools, team, FAQ and contact.
+- Contact form validated client-side and delivered by email via FormSubmit.
+- All editable content (services, tools, team, FAQs, contact details) lives in `src/data/site.ts`.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Built with
+
+TanStack Start, React, TypeScript, Tailwind CSS.

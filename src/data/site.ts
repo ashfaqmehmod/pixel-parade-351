@@ -10,9 +10,9 @@ import {
 export const brand = {
   name: "Bill Arena",
   tagline: "Less paperwork. More patients.",
-  email: "hello@billarena.com",
-  phone: "+1 (555) 000-0000",
-  whatsapp: "+1 (555) 000-0001",
+  email: "shehryar.bill.07@gmail.com",
+  phone: "0318 2761576",
+  phoneIntl: "+923182761576",
 };
 
 export const nav = [
@@ -25,8 +25,8 @@ export const nav = [
 
 export const stats = [
   { value: "13+", label: "Services" },
-  { value: "1:1", label: "Dedicated VA for every practice" },
-  { value: "US-hours", label: "Coverage across all time zones" },
+  { value: "Dedicated", label: "VA support for your practice" },
+  { value: "US-hours", label: "Coverage during your business day" },
 ];
 
 type Item = { icon: LucideIcon; title: string; text: string };
@@ -118,17 +118,11 @@ export const team = [
   { name: "Ibrar Ali", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups." },
 ];
 
-export const testimonials = [
-  { quote: "Our front desk finally has room to breathe. Calls get answered and reminders go out like clockwork.", name: "Dr. Placeholder", role: "Family Medicine, TX" },
-  { quote: "Denials dropped noticeably within the first couple of months. The reporting is clear and honest.", name: "Placeholder Name", role: "Practice Manager, FL" },
-  { quote: "It feels like having an extra team member who never misses a detail.", name: "Dr. Placeholder", role: "Behavioral Health, CA" },
-];
-
 export const faqs = [
   { q: "How does pricing work?", a: "We offer simple monthly plans based on hours and services needed. Book a free consultation for a tailored quote." },
-  { q: "Are you HIPAA-aware?", a: "Yes. Our VAs are trained on HIPAA practices, use secure access, and sign confidentiality agreements. We never share patient information." },
-  { q: "What hours do you work?", a: "We cover US business hours across Eastern, Central, Mountain and Pacific time zones." },
-  { q: "How fast can we get started?", a: "Most practices are up and running within 1–2 weeks after the consultation and workflow setup." },
+  { q: "Are you HIPAA-aware?", a: "Yes. Our team follows HIPAA-aware practices and uses secure access to your systems. We never share patient information." },
+  { q: "What hours do you work?", a: "We work during US business hours. Tell us your time zone and we'll confirm coverage." },
+  { q: "How fast can we get started?", a: "Timelines depend on your systems and needs — we'll give you a clear start date after the free consultation." },
   { q: "Which EHRs do you support?", a: "AdvancedMD, Optimantra, SimplePractice and many other EHRs. If you use something else, we adapt quickly." },
 ];
 
