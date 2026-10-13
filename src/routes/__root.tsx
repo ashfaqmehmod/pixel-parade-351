@@ -79,8 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bill Arena — Medical Virtual Assistants" },
-      { name: "description", content: "Remote medical virtual assistants for US healthcare practices." },
+      { property: "og:site_name", content: "Bill Arena" },
     ],
     links: [
       {
