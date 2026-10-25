@@ -11,8 +11,8 @@ export const brand = {
   name: "Bill Arena",
   tagline: "Less paperwork. More patients.",
   email: "shehryar.bill.07@gmail.com",
-  phone: "0318 2761576",
-  phoneIntl: "+923182761576",
+  phone: "0317 3264360",
+  phoneIntl: "+923173264360",
 };
 
 export const nav = [
@@ -112,9 +112,19 @@ export const toolGroups: { name: string; items: Item[] }[] = [
 ];
 export const ToolFallbackIcon = FileSpreadsheet;
 
-export const team = [
-  { name: "Shahyar Khan", role: "Senior VA · Team Lead", bio: "Keeps every workflow calm, organized and on schedule." },
-  { name: "Kashif Mashfrof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling." },
+export const team: { name: string; role: string; bio: string; linkedin?: string }[] = [
+  {
+    name: "Shehryar Khan",
+    role: "Senior VA · Team Lead",
+    bio: "Keeps every workflow calm, organized and on schedule.",
+    linkedin: "https://www.linkedin.com/in/shehryar-khan-3614a8443",
+  },
+  {
+    name: "Kashif Mashroof",
+    role: "Assistant VA",
+    bio: "Friendly voice on the phones and a pro at scheduling.",
+    linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/",
+  },
   { name: "Ibrar Ali", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups." },
 ];
 
