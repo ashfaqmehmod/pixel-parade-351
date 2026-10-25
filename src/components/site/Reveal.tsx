@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
+import logoUrl from "@/assets/logo-a.png";
 
 export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,13 +26,7 @@ export function Reveal({ children, className = "", delay = 0 }: { children: Reac
 }
 
 export function Logo({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden="true">
-      <path d="M20 4C10 10 6 18 8 27c2 7 9 10 14 8 8-3 12-13 6-31-2 6-6 10-8 0z" fill="currentColor" opacity=".9" />
-      <path d="M12 32C16 24 20 18 26 12" stroke="var(--background)" strokeWidth="1.6" fill="none" strokeLinecap="round" />
-      <path d="M31 24c0 3-2 5-4 5s-4-2-4-5 4-8 4-8 4 5 4 8z" fill="var(--sky)" />
-    </svg>
-  );
+  return <img src={logoUrl} alt="Bill Arena logo" width={512} height={512} className={className} />;
 }
 
 export function SectionHead({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {

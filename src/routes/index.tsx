@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, CheckCircle2, Linkedin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Logo, SectionHead } from "@/components/site/Reveal";
 import { brand, nav, stats, serviceGroups, benefits, steps, toolGroups, team, faqs, serviceOptions } from "@/data/site";
@@ -87,6 +87,7 @@ function Hero() {
     <section id="top" className="relative overflow-hidden bg-dew">
       <div className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-accent/25 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/2 h-96 w-96 rounded-full bg-sky/30 blur-3xl" />
+      <Logo className="float-slow pointer-events-none absolute -right-10 top-6 hidden h-80 w-80 opacity-[0.07] md:block" />
       <Leaf className="float-slow pointer-events-none absolute left-[8%] top-[18%] h-8 w-8 text-accent" aria-hidden />
       <Droplet className="float-fast pointer-events-none absolute left-[45%] top-[12%] h-6 w-6 text-sky" aria-hidden />
       <Droplet className="float-slow pointer-events-none absolute bottom-[14%] left-[30%] h-5 w-5 text-sky" aria-hidden />
@@ -268,6 +269,11 @@ function Team() {
               <h3 className="mt-6 text-2xl font-semibold text-primary">{m.name}</h3>
               <p className="text-sm font-medium text-muted-foreground">{m.role}</p>
               <p className="mt-3 text-sm text-muted-foreground">{m.bio}</p>
+              {m.linkedin && (
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`} className="mt-4 inline-flex items-center gap-2 rounded-full bg-mint px-4 py-1.5 text-sm font-medium text-primary transition hover:bg-sand">
+                  <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+                </a>
+              )}
             </article>
           </Reveal>
         ))}
@@ -396,7 +402,7 @@ function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2"><Logo className="h-8 w-8" /><span className="font-display text-xl">Bill Arena</span></div>
+        <div className="flex items-center gap-2.5"><span className="grid h-10 w-10 place-items-center rounded-full bg-card"><Logo className="h-7 w-7" /></span><span className="font-display text-xl">Bill Arena</span></div>
         <ul className="flex flex-wrap gap-6 text-sm text-primary-foreground/80">
           {nav.map((n) => <li key={n.href}><a href={n.href} className="hover:text-primary-foreground">{n.label}</a></li>)}
         </ul>
