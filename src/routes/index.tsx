@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
+import { appendLead } from "@/lib/leads.functions";
 import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, CheckCircle2, Linkedin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Logo, SectionHead } from "@/components/site/Reveal";
