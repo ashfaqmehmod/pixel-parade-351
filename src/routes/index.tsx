@@ -119,7 +119,7 @@ function Hero() {
             <img src={heroImg} alt="Fresh green leaves covered in morning dew" width={1280} height={1280} className="aspect-square w-full object-cover" />
           </div>
           <div className="absolute -bottom-6 -left-4 flex items-center gap-3 rounded-3xl bg-card p-4 shadow-soft md:-left-10">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-mint text-primary"><CheckCircle2 /></span>
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground"><CheckCircle2 /></span>
             <div>
               <p className="font-display text-lg font-semibold text-primary">Admin handled</p>
               <p className="text-xs text-muted-foreground">Calls · Claims · Follow-ups</p>
@@ -153,12 +153,12 @@ function Services() {
       <div className="space-y-14">
         {serviceGroups.map((g) => (
           <div key={g.name}>
-            <h3 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary"><Droplet className="h-5 w-5 text-sky" />{g.name}</h3>
+            <h3 className="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary"><Droplet className="h-5 w-5 text-accent" />{g.name}</h3>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {g.items.map((s, i) => (
                 <Reveal key={s.title} delay={i * 60}>
                   <article className="lift h-full rounded-[1.75rem] border border-border bg-card p-6">
-                    <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-mint text-primary"><s.icon className="h-6 w-6" /></span>
+                    <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-accent text-accent-foreground"><s.icon className="h-6 w-6" /></span>
                     <h4 className="text-lg font-semibold text-primary">{s.title}</h4>
                     <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
                   </article>
@@ -188,7 +188,7 @@ function Why() {
             {benefits.map((b, i) => (
               <Reveal key={b.title} delay={i * 60}>
                 <div className="flex gap-4">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-card text-primary shadow-soft"><b.icon className="h-5 w-5" /></span>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-card text-accent shadow-soft"><b.icon className="h-5 w-5" /></span>
                   <div>
                     <h3 className="font-sans text-base font-semibold text-primary">{b.title}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{b.text}</p>
@@ -240,7 +240,7 @@ function Tools() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {g.items.map((t) => (
                   <div key={t.title} className="lift flex items-center gap-4 rounded-3xl bg-card/90 p-5 shadow-soft">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-mint text-primary"><t.icon className="h-5 w-5" /></span>
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground"><t.icon className="h-5 w-5" /></span>
                     <div className="min-w-0">
                       <p className="font-semibold text-primary">{t.title}</p>
                       <p className="text-xs text-muted-foreground">{t.text}</p>
@@ -362,9 +362,9 @@ function Contact() {
           <h2 className="text-4xl font-semibold md:text-5xl">Ready to get your time back?</h2>
           <p className="mt-4 text-lg text-primary-foreground/85">Book a free consultation and we'll map out exactly how a Bill Arena VA can lighten your load.</p>
           <ul className="mt-8 space-y-4">
-            <li className="flex items-center gap-3"><Mail className="h-5 w-5" /><a href={`mailto:${brand.email}`} className="hover:underline">{brand.email}</a></li>
-            <li className="flex items-center gap-3"><Phone className="h-5 w-5" /><a href={`tel:${brand.phoneIntl}`} className="hover:underline">{brand.phone}</a></li>
-            <li className="flex items-center gap-3"><MessageCircle className="h-5 w-5" /><a href={`https://wa.me/${brand.phoneIntl.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp: {brand.phone}</a></li>
+<li className="flex items-center gap-3 text-primary-foreground"><Mail className="h-5 w-5 text-accent" /><a href={`mailto:${brand.email}`} className="hover:underline">{brand.email}</a></li>
+            <li className="flex items-center gap-3 text-primary-foreground"><Phone className="h-5 w-5 text-accent" /><a href={`tel:${brand.phoneIntl}`} className="hover:underline">{brand.phone}</a></li>
+            <li className="flex items-center gap-3 text-primary-foreground"><MessageCircle className="h-5 w-5 text-accent" /><a href={`https://wa.me/${brand.phoneIntl.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp: {brand.phone}</a></li>
           </ul>
           <p className="mt-8 flex items-center gap-2 text-sm text-primary-foreground/80"><ShieldCheck className="h-4 w-4" />We never share patient information.</p>
         </div>
@@ -372,7 +372,6 @@ function Contact() {
           {sent ? (
             <div className="py-16 text-center">
               <CheckCircle2 className="mx-auto h-14 w-14 text-accent" />
-              <h3 className="mt-4 text-3xl font-semibold text-primary">Message received</h3>
               <p className="mt-2 text-muted-foreground">Thank you! We'll reach out within one business day.</p>
               <button onClick={() => setSent(false)} className={`${btnGhost} mt-6`}>Send another</button>
             </div>
