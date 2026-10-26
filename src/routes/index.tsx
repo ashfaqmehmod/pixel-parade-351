@@ -310,6 +310,7 @@ const schema = z.object({
 });
 
 function Contact() {
+  const appendLeadFn = useServerFn(appendLead);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -325,20 +326,23 @@ function Contact() {
     }
     setErrors({});
     setSending(true);
-    try {
-      const res = await fetch(`https://formsubmit.co/ajax/${brand.email}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...r.data, _subject: `New consultation request — ${r.data.practice}`, _replyto: r.data.email, _template: "table" }),
-      });
-      if (!res.ok) throw new Error("send failed");
+    const sheets = await appendLeadFn({ data: r.data });
+    // Fire-and-forget email copy; never blocks the form result.
+    void fetch(`https://formsubmit.co/ajax/${brand.email}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ ...r.data, _subject: `New consultation request — ${r.data.practice}`, _replyto: r.data.email, _template: "table" }),
+      keepalive: true,
+      signal: AbortSignal.timeout(10000),
+    }).catch(() => {});
+    if (sheets.ok) {
       setSent(true);
       toast.success("Thanks! We'll be in touch within one business day.");
-    } catch {
+    } else {
+      console.error("Lead could not be saved to Google Sheets", sheets.error);
       toast.error(`Sorry, your message couldn't be sent. Please email ${brand.email} directly.`);
-    } finally {
-      setSending(false);
     }
+    setSending(false);
   };
   const field = "w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/30";
   const F = ({ name, label, type = "text" }: { name: string; label: string; type?: string }) => (
