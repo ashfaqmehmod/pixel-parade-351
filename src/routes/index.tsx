@@ -310,6 +310,7 @@ const schema = z.object({
 });
 
 function Contact() {
+  const appendLeadFn = useServerFn(appendLead);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
@@ -325,20 +326,26 @@ function Contact() {
     }
     setErrors({});
     setSending(true);
-    try {
-      const res = await fetch(`https://formsubmit.co/ajax/${brand.email}`, {
+    const [sheets, email] = await Promise.allSettled([
+      appendLeadFn({ data: r.data }),
+      fetch(`https://formsubmit.co/ajax/${brand.email}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ ...r.data, _subject: `New consultation request — ${r.data.practice}`, _replyto: r.data.email, _template: "table" }),
-      });
-      if (!res.ok) throw new Error("send failed");
+      }).then((res) => {
+        if (!res.ok) throw new Error("send failed");
+      }),
+    ]);
+    const sheetsOk = sheets.status === "fulfilled" && sheets.value.ok;
+    const emailOk = email.status === "fulfilled";
+    if (sheetsOk || emailOk) {
+      if (!sheetsOk) console.error("Lead saved to email but not to Google Sheets", sheets.status === "rejected" ? sheets.reason : sheets.value.error);
       setSent(true);
       toast.success("Thanks! We'll be in touch within one business day.");
-    } catch {
+    } else {
       toast.error(`Sorry, your message couldn't be sent. Please email ${brand.email} directly.`);
-    } finally {
-      setSending(false);
     }
+    setSending(false);
   };
   const field = "w-full rounded-2xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/30";
   const F = ({ name, label, type = "text" }: { name: string; label: string; type?: string }) => (
