@@ -1,4 +1,11 @@
 // All editable site content for Bill Arena lives here.
+import teamShehryar from "@/assets/team-shehryar.png.asset.json";
+import teamKashif from "@/assets/team-kashif.png.asset.json";
+import teamIbrarAmin from "@/assets/team-ibrar-amin.png.asset.json";
+import teamIbrarAli from "@/assets/team-ibrar-ali.png.asset.json";
+import teamSaif from "@/assets/team-saif.png.asset.json";
+import teamAliYazdan from "@/assets/team-ali-yazdan.png.asset.json";
+import teamAshfaq from "@/assets/team-ashfaq.png.asset.json";
 import {
   PhoneCall, UserPlus, CalendarDays, BellRing, ShieldCheck, FileCheck2, FileText,
   Receipt, Wallet, ScanSearch, RotateCcw, Landmark, BarChart3, PiggyBank, GraduationCap,
@@ -112,22 +119,21 @@ export const toolGroups: { name: string; items: Item[] }[] = [
 ];
 export const ToolFallbackIcon = FileSpreadsheet;
 
-export const team: { name: string; role: string; bio: string; linkedin?: string }[] = [
-  {
-    name: "Shehryar Khan",
-    role: "Senior VA · Team Lead",
-    bio: "Keeps every workflow calm, organized and on schedule.",
-    linkedin: "https://www.linkedin.com/in/shehryar-khan-3614a8443",
-  },
-  {
-    name: "Kashif Mashroof",
-    role: "Assistant VA",
-    bio: "Friendly voice on the phones and a pro at scheduling.",
-    linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/",
-  },
-  { name: "Ibrar Amin", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups." },
-  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most." },
-  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running." },
+export const teamLead: TeamMember = {
+  name: "Shehryar Khan",
+  role: "Senior VA · Team Lead",
+  bio: "Leads the team and keeps every client workflow calm, organized and on schedule.",
+  linkedin: "https://www.linkedin.com/in/shehryar-khan-3614a8443",
+  photo: teamShehryar.url,
+};
+
+export const team: TeamMember[] = [
+  { name: "Ali Yazdan", role: "Accountant", bio: "Keeps the books clean and the numbers easy to trust.", photo: teamAliYazdan.url },
+  { name: "Ibrar Amin", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups.", photo: teamIbrarAmin.url },
+  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most.", photo: teamSaif.url },
+  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running.", photo: teamAshfaq.url },
+  { name: "Ibrar Ali", role: "Assistant VA", bio: "Reliable hands on scheduling, records and daily admin.", photo: teamIbrarAli.url },
+  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif.url },
 ];
 
 export const faqs = [
