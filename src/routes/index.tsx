@@ -7,7 +7,7 @@ import { appendLead } from "@/lib/leads.functions";
 import { Menu, X, ShieldCheck, Clock, UserCheck, Droplet, Leaf, Mail, Phone, MessageCircle, CheckCircle2, Linkedin } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Logo, SectionHead } from "@/components/site/Reveal";
-import { brand, nav, stats, serviceGroups, benefits, steps, toolGroups, team, faqs, serviceOptions } from "@/data/site";
+import { brand, nav, stats, serviceGroups, benefits, steps, toolGroups, teamLead, team, faqs, serviceOptions } from "@/data/site";
 import heroImg from "@/assets/hero-leaves.jpg";
 import vaImg from "@/assets/va-work.jpg";
 import forestImg from "@/assets/forest-bg.jpg";
@@ -261,18 +261,46 @@ function Team() {
   return (
     <section id="team" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <SectionHead eyebrow="Team" title="The people behind your calmer days" />
-      <div className="grid gap-6 md:grid-cols-3">
+      <Reveal>
+        <article className="lift mb-8 grid items-center gap-8 rounded-[2rem] border border-border bg-card p-7 shadow-lift md:grid-cols-[280px_1fr] md:p-10">
+          <img
+            src={teamLead.photo}
+            alt={`Photo of ${teamLead.name}`}
+            loading="lazy"
+            width={800}
+            height={800}
+            className="mx-auto w-full max-w-[280px] rounded-[2.5rem_5rem_2.5rem_5rem] object-cover"
+          />
+          <div>
+            <p className="mb-2 inline-flex rounded-full bg-mint px-4 py-1 text-xs font-semibold uppercase tracking-widest text-primary">Team Lead</p>
+            <h3 className="text-3xl font-semibold text-primary md:text-4xl">{teamLead.name}</h3>
+            <p className="text-sm font-medium text-muted-foreground">{teamLead.role}</p>
+            <p className="mt-3 text-muted-foreground">{teamLead.bio}</p>
+            {teamLead.linkedin && (
+              <a href={teamLead.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${teamLead.name} on LinkedIn`} className="mt-5 inline-flex items-center gap-2 rounded-full bg-mint px-5 py-2 text-sm font-medium text-primary transition hover:bg-sand">
+                <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+              </a>
+            )}
+          </div>
+        </article>
+      </Reveal>
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {team.map((m, i) => (
-          <Reveal key={m.name} delay={i * 100}>
-            <article className="lift rounded-[1.75rem] border border-border bg-card p-6 text-center">
-              <div className="mx-auto grid aspect-square w-full max-w-[220px] place-items-center rounded-[40%_60%_55%_45%] bg-mint font-display text-5xl text-primary" role="img" aria-label={`Photo placeholder for ${m.name}`}>
-                {m.name.split(" ").map((p) => p[0]).join("")}
-              </div>
-              <h3 className="mt-6 text-2xl font-semibold text-primary">{m.name}</h3>
+          <Reveal key={m.name} delay={i * 80}>
+            <article className="lift flex h-full flex-col rounded-[1.75rem] border border-border bg-card p-6 text-center">
+              <img
+                src={m.photo}
+                alt={`Photo of ${m.name}`}
+                loading="lazy"
+                width={800}
+                height={800}
+                className="mx-auto aspect-square w-full max-w-[200px] rounded-[40%_60%_55%_45%] object-cover"
+              />
+              <h3 className="mt-5 text-xl font-semibold text-primary">{m.name}</h3>
               <p className="text-sm font-medium text-muted-foreground">{m.role}</p>
-              <p className="mt-3 text-sm text-muted-foreground">{m.bio}</p>
+              <p className="mt-3 flex-1 text-sm text-muted-foreground">{m.bio}</p>
               {m.linkedin && (
-                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`} className="mt-4 inline-flex items-center gap-2 rounded-full bg-mint px-4 py-1.5 text-sm font-medium text-primary transition hover:bg-sand">
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`} className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-mint px-4 py-1.5 text-sm font-medium text-primary transition hover:bg-sand">
                   <Linkedin className="h-4 w-4" /> Connect on LinkedIn
                 </a>
               )}
