@@ -372,6 +372,7 @@ function Contact() {
           {sent ? (
             <div className="py-16 text-center">
               <CheckCircle2 className="mx-auto h-14 w-14 text-accent" />
+              <h3 className="mt-4 text-3xl font-semibold text-primary">Message received</h3>
               <p className="mt-2 text-muted-foreground">Thank you! We'll reach out within one business day.</p>
               <button onClick={() => setSent(false)} className={`${btnGhost} mt-6`}>Send another</button>
             </div>
