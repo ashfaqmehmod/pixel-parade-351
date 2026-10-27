@@ -125,7 +125,9 @@ export const team: { name: string; role: string; bio: string; linkedin?: string 
     bio: "Friendly voice on the phones and a pro at scheduling.",
     linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/",
   },
-  { name: "Ibrar Ali", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups." },
+  { name: "Ibrar Amin", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups." },
+  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most." },
+  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running." },
 ];
 
 export const faqs = [
