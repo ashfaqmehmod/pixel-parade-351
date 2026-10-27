@@ -119,7 +119,7 @@ function Hero() {
             <img src={heroImg} alt="Fresh green leaves covered in morning dew" width={1280} height={1280} className="aspect-square w-full object-cover" />
           </div>
           <div className="absolute -bottom-6 -left-4 flex items-center gap-3 rounded-3xl bg-card p-4 shadow-soft md:-left-10">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent text-accent-foreground"><CheckCircle2 /></span>
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-mint text-accent"><CheckCircle2 /></span>
             <div>
               <p className="font-display text-lg font-semibold text-primary">Admin handled</p>
               <p className="text-xs text-muted-foreground">Calls · Claims · Follow-ups</p>
@@ -158,7 +158,7 @@ function Services() {
               {g.items.map((s, i) => (
                 <Reveal key={s.title} delay={i * 60}>
                   <article className="lift h-full rounded-[1.75rem] border border-border bg-card p-6">
-                    <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-accent text-accent-foreground"><s.icon className="h-6 w-6" /></span>
+                    <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-mint text-accent"><s.icon className="h-6 w-6" /></span>
                     <h4 className="text-lg font-semibold text-primary">{s.title}</h4>
                     <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
                   </article>
@@ -240,7 +240,7 @@ function Tools() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {g.items.map((t) => (
                   <div key={t.title} className="lift flex items-center gap-4 rounded-3xl bg-card/90 p-5 shadow-soft">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-accent text-accent-foreground"><t.icon className="h-5 w-5" /></span>
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-mint text-accent"><t.icon className="h-5 w-5" /></span>
                     <div className="min-w-0">
                       <p className="font-semibold text-primary">{t.title}</p>
                       <p className="text-xs text-muted-foreground">{t.text}</p>
