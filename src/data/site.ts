@@ -119,6 +119,8 @@ export const toolGroups: { name: string; items: Item[] }[] = [
 ];
 export const ToolFallbackIcon = FileSpreadsheet;
 
+type TeamMember = { name: string; role: string; bio: string; linkedin?: string; photo?: string };
+
 export const teamLead: TeamMember = {
   name: "Shehryar Khan",
   role: "Senior VA · Team Lead",
