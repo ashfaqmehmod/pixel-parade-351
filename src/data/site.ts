@@ -130,12 +130,12 @@ export const teamLead: TeamMember = {
 };
 
 export const team: TeamMember[] = [
-  { name: "Ali Yazdan", role: "Accountant", bio: "Keeps the books clean and the numbers easy to trust.", photo: teamAliYazdan.url },
-  { name: "Ibrar Amin", role: "Assistant VA", bio: "Detail-minded on eligibility, claims and follow-ups.", photo: teamIbrarAmin.url },
+  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif.url },
+  { name: "Ibrar Amin", role: "Accountant", bio: "Careful, accurate hands on the numbers that keep billing clean.", photo: teamIbrarAmin.url },
   { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most.", photo: teamSaif.url },
   { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running.", photo: teamAshfaq.url },
   { name: "Ibrar Ali", role: "Assistant VA", bio: "Reliable hands on scheduling, records and daily admin.", photo: teamIbrarAli.url },
-  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif.url },
+  { name: "Ali Yazdan", role: "HR Manager", bio: "Keeps the team supported, organized and growing.", photo: teamAliYazdan.url },
 ];
 
 export const faqs = [
