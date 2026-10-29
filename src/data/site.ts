@@ -18,7 +18,7 @@ export const brand = {
   name: "Bill Arena",
   tagline: "Less paperwork. More patients.",
   email: "shehryar.bill.07@gmail.com",
-  phone: "0317 3264360",
+  phone: "+92 3173264360",
   phoneIntl: "+923173264360",
 };
 
