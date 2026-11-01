@@ -6,6 +6,10 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Team photos are Lovable-hosted assets served from `/__l5e/assets-v1/*`. When running
+// `vite dev` locally, the Lovable assets proxy only forwards those requests if this is set.
+process.env.LOVABLE_PREVIEW_HOST ??= "pixel-parade-351.lovable.app";
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
