@@ -1,11 +1,11 @@
 // All editable site content for Bill Arena lives here.
-import teamShehryar from "@/assets/team-shehryar.png.asset.json";
-import teamKashif from "@/assets/team-kashif.png.asset.json";
-import teamIbrarAmin from "@/assets/team-ibrar-amin.png.asset.json";
-import teamIbrarAli from "@/assets/team-ibrar-ali.png.asset.json";
-import teamSaif from "@/assets/team-saif.png.asset.json";
-import teamAliYazdan from "@/assets/team-ali-yazdan.png.asset.json";
-import teamAshfaq from "@/assets/team-ashfaq.png.asset.json";
+import teamShehryar from "@/assets/team/team-shehryar.png";
+import teamKashif from "@/assets/team/team-kashif.png";
+import teamIbrarAmin from "@/assets/team/team-ibrar-amin.png";
+import teamIbrarAli from "@/assets/team/team-ibrar-ali.png";
+import teamSaif from "@/assets/team/team-saif.png";
+import teamAliYazdan from "@/assets/team/team-ali-yazdan.png";
+import teamAshfaq from "@/assets/team/team-ashfaq.png";
 import {
   PhoneCall, UserPlus, CalendarDays, BellRing, ShieldCheck, FileCheck2, FileText,
   Receipt, Wallet, ScanSearch, RotateCcw, Landmark, BarChart3, PiggyBank, GraduationCap,
@@ -126,16 +126,16 @@ export const teamLead: TeamMember = {
   role: "Senior VA · Team Lead",
   bio: "Leads the team and keeps every client workflow calm, organized and on schedule.",
   linkedin: "https://www.linkedin.com/in/shehryar-khan-3614a8443",
-  photo: teamShehryar.url,
+  photo: teamShehryar,
 };
 
 export const team: TeamMember[] = [
-  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif.url },
-  { name: "Ibrar Amin", role: "Accountant", bio: "Careful, accurate hands on the numbers that keep billing clean.", photo: teamIbrarAmin.url },
-  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most.", photo: teamSaif.url },
-  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running.", photo: teamAshfaq.url },
-  { name: "Ibrar Ali", role: "Assistant VA", bio: "Reliable hands on scheduling, records and daily admin.", photo: teamIbrarAli.url },
-  { name: "Ali Yazdan", role: "HR Manager", bio: "Keeps the team supported, organized and growing.", photo: teamAliYazdan.url },
+  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif },
+  { name: "Ibrar Amin", role: "Accountant", bio: "Careful, accurate hands on the numbers that keep billing clean.", photo: teamIbrarAmin },
+  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most.", photo: teamSaif },
+  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running.", photo: teamAshfaq },
+  { name: "Ibrar Ali", role: "Assistant VA", bio: "Reliable hands on scheduling, records and daily admin.", photo: teamIbrarAli },
+  { name: "Ali Yazdan", role: "HR Manager", bio: "Keeps the team supported, organized and growing.", photo: teamAliYazdan },
 ];
 
 export const faqs = [
