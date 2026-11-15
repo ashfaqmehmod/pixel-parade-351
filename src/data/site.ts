@@ -7,11 +7,39 @@ import teamSaif from "@/assets/team/team-saif.png";
 import teamAliYazdan from "@/assets/team/team-ali-yazdan.png";
 import teamAshfaq from "@/assets/team/team-ashfaq.png";
 import {
-  PhoneCall, UserPlus, CalendarDays, BellRing, ShieldCheck, FileCheck2, FileText,
-  Receipt, Wallet, ScanSearch, RotateCcw, Landmark, BarChart3, PiggyBank, GraduationCap,
-  TrendingDown, Timer, HeartPulse, Leaf, MonitorSmartphone, ClipboardList, Cloud,
-  Stethoscope, CalendarCheck, FileSpreadsheet, Pill, BadgeCheck, Globe, Phone,
-  MessageSquare, Printer, Sheet, type LucideIcon,
+  PhoneCall,
+  UserPlus,
+  CalendarDays,
+  BellRing,
+  ShieldCheck,
+  FileCheck2,
+  FileText,
+  Receipt,
+  Wallet,
+  ScanSearch,
+  RotateCcw,
+  Landmark,
+  BarChart3,
+  PiggyBank,
+  GraduationCap,
+  TrendingDown,
+  Timer,
+  HeartPulse,
+  Leaf,
+  MonitorSmartphone,
+  ClipboardList,
+  Cloud,
+  Stethoscope,
+  CalendarCheck,
+  FileSpreadsheet,
+  Pill,
+  BadgeCheck,
+  Globe,
+  Phone,
+  MessageSquare,
+  Printer,
+  Sheet,
+  type LucideIcon,
 } from "lucide-react";
 
 export const brand = {
@@ -42,18 +70,46 @@ export const serviceGroups: { name: string; items: Item[] }[] = [
   {
     name: "Front Office",
     items: [
-      { icon: PhoneCall, title: "Inbound & Outbound Calls", text: "Every patient call answered warmly and on time." },
-      { icon: UserPlus, title: "Patient Registration", text: "Clean, complete demographics from day one." },
-      { icon: CalendarDays, title: "Appointment Scheduling", text: "Full calendars without the phone-tag." },
-      { icon: BellRing, title: "Appointment Reminders", text: "Fewer no-shows with timely nudges." },
+      {
+        icon: PhoneCall,
+        title: "Inbound & Outbound Calls",
+        text: "Every patient call answered warmly and on time.",
+      },
+      {
+        icon: UserPlus,
+        title: "Patient Registration",
+        text: "Clean, complete demographics from day one.",
+      },
+      {
+        icon: CalendarDays,
+        title: "Appointment Scheduling",
+        text: "Full calendars without the phone-tag.",
+      },
+      {
+        icon: BellRing,
+        title: "Appointment Reminders",
+        text: "Fewer no-shows with timely nudges.",
+      },
     ],
   },
   {
     name: "Insurance & Authorization",
     items: [
-      { icon: ShieldCheck, title: "Insurance Eligibility Verification", text: "Coverage confirmed before the visit." },
-      { icon: FileCheck2, title: "Prior Authorization", text: "Approvals chased so care isn't delayed." },
-      { icon: FileText, title: "Medical Documentation", text: "Organized records that support every claim." },
+      {
+        icon: ShieldCheck,
+        title: "Insurance Eligibility Verification",
+        text: "Coverage confirmed before the visit.",
+      },
+      {
+        icon: FileCheck2,
+        title: "Prior Authorization",
+        text: "Approvals chased so care isn't delayed.",
+      },
+      {
+        icon: FileText,
+        title: "Medical Documentation",
+        text: "Organized records that support every claim.",
+      },
     ],
   },
   {
@@ -63,19 +119,51 @@ export const serviceGroups: { name: string; items: Item[] }[] = [
       { icon: Wallet, title: "Payment Posting", text: "Payments reconciled, nothing slipping by." },
       { icon: ScanSearch, title: "Claim Scrubbing", text: "Errors caught before claims go out." },
       { icon: RotateCcw, title: "Denial Management", text: "Denials worked and resubmitted fast." },
-      { icon: Landmark, title: "Accounts Receivable", text: "Steady follow-up that shrinks aging AR." },
-      { icon: BarChart3, title: "Reporting & Reconciliation", text: "Clear numbers you can act on." },
+      {
+        icon: Landmark,
+        title: "Accounts Receivable",
+        text: "Steady follow-up that shrinks aging AR.",
+      },
+      {
+        icon: BarChart3,
+        title: "Reporting & Reconciliation",
+        text: "Clear numbers you can act on.",
+      },
     ],
   },
 ];
 
 export const benefits: Item[] = [
-  { icon: PiggyBank, title: "Real cost savings", text: "Skilled support for a fraction of in-house staffing costs." },
-  { icon: GraduationCap, title: "Trained medical VAs", text: "Assistants who know US healthcare workflows and terminology." },
-  { icon: TrendingDown, title: "Fewer denials", text: "Careful verification and scrubbing keep claims clean." },
-  { icon: Timer, title: "Faster collections", text: "Consistent AR follow-up brings revenue in sooner." },
-  { icon: HeartPulse, title: "More time for patients", text: "Hand off the admin and get back to care." },
-  { icon: Leaf, title: "Paperless & lower-carbon", text: "Remote, digital-first operations with a lighter footprint." },
+  {
+    icon: PiggyBank,
+    title: "Real cost savings",
+    text: "Skilled support for a fraction of in-house staffing costs.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Trained medical VAs",
+    text: "Assistants who know US healthcare workflows and terminology.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Fewer denials",
+    text: "Careful verification and scrubbing keep claims clean.",
+  },
+  {
+    icon: Timer,
+    title: "Faster collections",
+    text: "Consistent AR follow-up brings revenue in sooner.",
+  },
+  {
+    icon: HeartPulse,
+    title: "More time for patients",
+    text: "Hand off the admin and get back to care.",
+  },
+  {
+    icon: Leaf,
+    title: "Paperless & lower-carbon",
+    text: "Remote, digital-first operations with a lighter footprint.",
+  },
 ];
 
 export const steps = [
@@ -89,7 +177,11 @@ export const toolGroups: { name: string; items: Item[] }[] = [
   {
     name: "EHR & Practice Management",
     items: [
-      { icon: MonitorSmartphone, title: "EHR systems", text: "Charts, documentation, registration" },
+      {
+        icon: MonitorSmartphone,
+        title: "EHR systems",
+        text: "Charts, documentation, registration",
+      },
       { icon: Cloud, title: "AdvancedMD", text: "Cloud EHR, practice management, billing" },
       { icon: ClipboardList, title: "Optimantra", text: "Practice management and billing" },
       { icon: CalendarCheck, title: "SimplePractice", text: "Scheduling, client records, billing" },
@@ -130,20 +222,66 @@ export const teamLead: TeamMember = {
 };
 
 export const team: TeamMember[] = [
-  { name: "Kashif Mashroof", role: "Assistant VA", bio: "Friendly voice on the phones and a pro at scheduling.", linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/", photo: teamKashif },
-  { name: "Ibrar Amin", role: "Accountant", bio: "Careful, accurate hands on the numbers that keep billing clean.", photo: teamIbrarAmin },
-  { name: "Saif Ullah", role: "Marketing Executive", bio: "Gets Bill Arena in front of the practices that need it most.", photo: teamSaif },
-  { name: "Ashfaq Mehmood", role: "Developer (IT)", bio: "Keeps the website and internal tools fast, secure and running.", photo: teamAshfaq },
-  { name: "Ibrar Ali", role: "Assistant VA", bio: "Reliable hands on scheduling, records and daily admin.", photo: teamIbrarAli },
-  { name: "Ali Yazdan", role: "HR Manager", bio: "Keeps the team supported, organized and growing.", photo: teamAliYazdan },
+  {
+    name: "Kashif Mashroof",
+    role: "Assistant VA",
+    bio: "Friendly voice on the phones and a pro at scheduling.",
+    linkedin: "https://www.linkedin.com/in/kashif-mashroof-0a8aa841a/",
+    photo: teamKashif,
+  },
+  {
+    name: "Ibrar Amin",
+    role: "Accountant",
+    bio: "Careful, accurate hands on the numbers that keep billing clean.",
+    photo: teamIbrarAmin,
+  },
+  {
+    name: "Saif Ullah",
+    role: "Marketing Executive",
+    bio: "Gets Bill Arena in front of the practices that need it most.",
+    photo: teamSaif,
+  },
+  {
+    name: "Ashfaq Mehmood",
+    role: "Developer (IT)",
+    bio: "Keeps the website and internal tools fast, secure and running.",
+    photo: teamAshfaq,
+  },
+  {
+    name: "Ibrar Ali",
+    role: "Assistant VA",
+    bio: "Reliable hands on scheduling, records and daily admin.",
+    photo: teamIbrarAli,
+  },
+  {
+    name: "Ali Yazdan",
+    role: "HR Manager",
+    bio: "Keeps the team supported, organized and growing.",
+    photo: teamAliYazdan,
+  },
 ];
 
 export const faqs = [
-  { q: "How does pricing work?", a: "We offer simple monthly plans based on hours and services needed. Book a free consultation for a tailored quote." },
-  { q: "Are you HIPAA-aware?", a: "Yes. Our team follows HIPAA-aware practices and uses secure access to your systems. We never share patient information." },
-  { q: "What hours do you work?", a: "We work during US business hours. Tell us your time zone and we'll confirm coverage." },
-  { q: "How fast can we get started?", a: "Timelines depend on your systems and needs — we'll give you a clear start date after the free consultation." },
-  { q: "Which EHRs do you support?", a: "AdvancedMD, Optimantra, SimplePractice and many other EHRs. If you use something else, we adapt quickly." },
+  {
+    q: "How does pricing work?",
+    a: "We offer simple monthly plans based on hours and services needed. Book a free consultation for a tailored quote.",
+  },
+  {
+    q: "Are you HIPAA-aware?",
+    a: "Yes. Our team follows HIPAA-aware practices and uses secure access to your systems. We never share patient information.",
+  },
+  {
+    q: "What hours do you work?",
+    a: "We work during US business hours. Tell us your time zone and we'll confirm coverage.",
+  },
+  {
+    q: "How fast can we get started?",
+    a: "Timelines depend on your systems and needs — we'll give you a clear start date after the free consultation.",
+  },
+  {
+    q: "Which EHRs do you support?",
+    a: "AdvancedMD, Optimantra, SimplePractice and many other EHRs. If you use something else, we adapt quickly.",
+  },
 ];
 
 export const serviceOptions = serviceGroups.flatMap((g) => g.items.map((i) => i.title));
